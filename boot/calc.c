@@ -80,7 +80,7 @@ void calc_input(char c) {
     }
 
     // normal character
-    if (calc_len < sizeof(calc_buffer) - 1) {
+    if ((unsigned int)calc_len < sizeof(calc_buffer) - 1) {
         calc_buffer[calc_len++] = c;
         terminal_put_char(c);
     }
