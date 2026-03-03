@@ -8,3 +8,5 @@ idt_load:
     mov eax, [esp + 4]   ; argument: pointer to struct idt_ptr
     lidt [eax]           ; load IDT register
     ret
+
+section .note.GNU-stack noalloc noexec nowrite
