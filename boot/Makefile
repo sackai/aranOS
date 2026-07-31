@@ -78,7 +78,7 @@ kernel.elf: kernel_entry.o kernel.o console.o idt.o idt_load.o \
 	isr.o isr_asm.o irq.o irq_asm.o keyboard.o keyboard_buffer.o shell.o string.o reboot.o calc.o input.o fs.o port_io.o ata.o linker.ld
 	$(LD) $(LDFLAGS) -T linker.ld \
 		kernel_entry.o kernel.o console.o idt.o idt_load.o \
-		isr.o isr_asm.o irq.o irq_asm.o keyboard.o shell.o string.o reboot.o calc.o input.o fs.o port_io.o ata.o \
+		isr.o isr_asm.o irq.o irq_asm.o keyboard.o keyboard_buffer.o shell.o string.o reboot.o calc.o input.o fs.o port_io.o ata.o \
 		-o kernel.elf
 
 kernel.bin: kernel.elf
@@ -86,6 +86,7 @@ kernel.bin: kernel.elf
 
 os-image.bin: boot.bin kernel.bin
 	cat boot.bin kernel.bin > os-image.bin
+	truncate -s 1474560 os-image.bin
 
 # -----------------------
 # Create 10MB Disk Image

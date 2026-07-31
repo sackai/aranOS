@@ -23,7 +23,7 @@ static fs_file_t ram_file_view;
 
 // -------------------- Helpers --------------------
 
-static void fs_zero_directory(void) {
+static void __attribute__((unused)) fs_zero_directory(void) {
     for (int i = 0; i < FS_MAX_FILES; ++i) {
         directory[i].name[0] = 0;
         directory[i].used = 0;

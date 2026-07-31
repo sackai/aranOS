@@ -40,10 +40,12 @@ void kmain(void) {
 #include "isr.h"
 #include "irq.h"
 #include "keyboard.h"
+#include "keyboard_buffer.h"
 #include "shell.h"
 #include "fs.h"
 #include "ata.h"
 #include "input.h"
+#include "calc.h"
 
 
 
@@ -51,7 +53,7 @@ void kmain(void) {
 static uint32_t ticks = 0;
 
 // Called on each timer interrupt (IRQ0)
-static void timer_handler(void) {
+static void __attribute__((unused)) timer_handler(void) {
     ticks++;
 
     // Print a dot every 50 ticks or so (roughly ~0.5s at 100Hz PIT, depends on QEMU)
