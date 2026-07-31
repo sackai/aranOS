@@ -86,6 +86,7 @@ kernel.bin: kernel.elf
 
 os-image.bin: boot.bin kernel.bin
 	cat boot.bin kernel.bin > os-image.bin
+	truncate -s 1474560 os-image.bin
 
 # -----------------------
 # Create 10MB Disk Image
