@@ -1,0 +1,2 @@
+@import "tailwindcss";
+:root{font-family:Inter,ui-sans-serif,system-ui;background:#070713;color:#f8fafc}.glass{background:linear-gradient(135deg,rgba(255,255,255,.14),rgba(255,255,255,.06));backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.16)}.prose h1{font-size:1.6rem;font-weight:800}.prose h2{font-size:1.15rem;font-weight:700;margin-top:1rem}.prose li{margin-left:1rem;list-style:disc}
